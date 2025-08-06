@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { Search, Filter, Trophy, Medal, Target, Users, TrendingUp, TrendingDown, ArrowUpDown, ArrowUp, ArrowDown } from 'lucide-react';
 import SVGBackground from '../components/SVGBackground';
 import LoadingSpinner from '../components/LoadingSpinner';
-import { getCadets, getCadetScores, type Cadet, type Score } from '../lib/supabase';
 import { getCadets, getScoresByCadetId, type Cadet, type Score } from '../lib/supabase';
 
 interface CadetWithScores extends Cadet {
