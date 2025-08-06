@@ -26,7 +26,7 @@ import LoadingSpinner from '../components/LoadingSpinner';
 import ProgressBar from '../components/ProgressBar';
 import { 
   getCadetById, 
-  getCadetScores, 
+  getScoresByCadetId, 
   getCadetAchievements, 
   getAutoAchievements,
   getScoreHistory,
@@ -65,7 +65,7 @@ const CadetProfile: React.FC = () => {
         setCadet(cadetData);
         
         // Получаем баллы кадета
-        const scoresData = await getCadetScores(id);
+        const scoresData = await getScoresByCadetId(id);
         setScores(scoresData);
         
         // Получаем достижения кадета

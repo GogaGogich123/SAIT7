@@ -5,6 +5,7 @@ import { Search, Filter, Trophy, Medal, Target, Users, TrendingUp, TrendingDown,
 import SVGBackground from '../components/SVGBackground';
 import LoadingSpinner from '../components/LoadingSpinner';
 import { getCadets, getCadetScores, type Cadet, type Score } from '../lib/supabase';
+import { getCadets, getScoresByCadetId, type Cadet, type Score } from '../lib/supabase';
 
 interface CadetWithScores extends Cadet {
   scores: {
@@ -38,7 +39,7 @@ const RatingPage: React.FC = () => {
         const cadetsWithScores = await Promise.all(
           cadetsData.map(async (cadet) => {
             try {
-              const scores = await getCadetScores(cadet.id);
+              const scores = await getScoresByCadetId(cadet.id);
               return {
                 ...cadet,
                 scores: {
